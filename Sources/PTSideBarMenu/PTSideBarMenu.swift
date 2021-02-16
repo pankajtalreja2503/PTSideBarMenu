@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 @available(iOS 13.0, *)
-struct PTSideBarMenu: View {
+public struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
     @State private var xOffset: CGFloat = .zero
     @Binding var contentView: AnyView
