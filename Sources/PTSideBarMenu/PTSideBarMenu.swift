@@ -11,8 +11,13 @@ import Combine
 @available(iOS 13.0, *)
 public struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
+    let contentView: AnyView
+
+    public init(selectedRow: @escaping (Int) -> (), contentView: AnyView) {
+        self.selectedRow = selectedRow
+        self.contentView = contentView
+    }
     @State private var xOffset: CGFloat = .zero
-    @Binding var contentView: AnyView
     
     public var body: some View {
         ZStack {
