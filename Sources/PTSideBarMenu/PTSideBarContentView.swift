@@ -22,13 +22,9 @@ struct PTSideBarContentView: View {
                 ForEach(0 ..< self.configuration.sideBarItems.count) { index in
                     PTRowContentView(item: self.configuration.sideBarItems[index],didSelectRowAt: didSelectRowAt,index: index)
                         .background(configuration.backgroudColorOfRow)
-                    //                    .background(Color(configuration.backgroudColorOfRow))
                     
                 }
                 
-                //            ForEach(configuration.sideBarItems, id: \.title) { item in
-                //                PTRowContentView(item: item,didSelectRowAt: didSelectRowAt,index: <#T##Int#>)
-                //            }
             }
         } else {
             // Fallback on earlier versions

@@ -9,10 +9,11 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public struct PTSideBarModel {
-    let title: String?
+    public let title: String?
     let imageName: String?
     let image: Image?
     let downloadImageURL: URL?
+    
     private init(withtitle title: String?, imageName: String?, image: Image?, downloadImageURL: URL?) {
         self.title = title
         self.imageName = imageName

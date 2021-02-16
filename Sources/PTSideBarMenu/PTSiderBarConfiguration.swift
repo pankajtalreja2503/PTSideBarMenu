@@ -11,7 +11,7 @@ import SwiftUI
 public class PTSiderBarConfiguration: ObservableObject {
     
     /// ///Select The border design
-    let dividerDesign: DividerDesigns
+    let dividerDesign: DividerDesigns = .ZigZag
     
     ///List of Items which need to display
     let sideBarItems: [PTSideBarModel]
@@ -36,10 +36,14 @@ public class PTSiderBarConfiguration: ObservableObject {
     /// Set ZigZag Pattern width
     var zigZagWidth: CGFloat = 40
     
+    /// Set Hide sidebar
+    var hideSideBar: Bool = true
     
     /// Initilize initial values for Side Menu: Divider Design, Items to display
     init(dividerdesign: DividerDesigns, items: [PTSideBarModel]) throws {
-        self.dividerDesign = dividerdesign
+//        self.dividerDesign = dividerdesign
         self.sideBarItems = items
     }
+    
+    
 }
