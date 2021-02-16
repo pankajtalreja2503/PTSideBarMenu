@@ -40,7 +40,7 @@ public class PTSiderBarConfiguration: ObservableObject {
     var hideSideBar: Bool = true
     
     /// Initilize initial values for Side Menu: Divider Design, Items to display
-    init(dividerdesign: DividerDesigns, items: [PTSideBarModel]) throws {
+    public init(dividerdesign: DividerDesigns, items: [PTSideBarModel]) throws {
 //        self.dividerDesign = dividerdesign
         self.sideBarItems = items
     }
