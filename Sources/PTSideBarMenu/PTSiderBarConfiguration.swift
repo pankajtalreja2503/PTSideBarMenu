@@ -20,24 +20,24 @@ public class PTSiderBarConfiguration: ObservableObject {
     private let customeRowValue: AnyView? = nil
     
     ///Selected Items from the Menu
-    var selectedRow = 0
+    public var selectedRow = 0
     
     /// Set Backgroud Color of Row
-    var backgroudColorOfRow: Color = . accentColor
+    public var backgroudColorOfRow: Color = . accentColor
     
     /// Set Backgroud Color of Menu
-    var backgroundColorOfMenu: Color = .accentColor
+    public var backgroundColorOfMenu: Color = .accentColor
     
     /// Set Text Color of Menu
-    var menuTextColor: Color = .white
+    public var menuTextColor: Color = .white
     
     /// Set ZigZag Pattern Height
-    var zigZagHeight:CGFloat  = 5
+    public var zigZagHeight:CGFloat  = 5
     /// Set ZigZag Pattern width
-    var zigZagWidth: CGFloat = 40
+    public var zigZagWidth: CGFloat = 40
     
     /// Set Hide sidebar
-    var hideSideBar: Bool = true
+    public var hideSideBar: Bool = true
     
     /// Initilize initial values for Side Menu: Divider Design, Items to display
     public init(dividerdesign: DividerDesigns, items: [PTSideBarModel]) throws {
