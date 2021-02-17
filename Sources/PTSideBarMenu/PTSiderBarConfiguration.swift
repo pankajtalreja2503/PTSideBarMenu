@@ -45,5 +45,8 @@ public class PTSiderBarConfiguration: ObservableObject {
         self.sideBarItems = items
     }
     
+    public func toggleSideBar() {
+        hideSideBar.toggle()
+    }
     
 }
