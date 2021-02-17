@@ -17,7 +17,7 @@ public class PTSiderBarConfiguration: ObservableObject {
     let sideBarItems: [PTSideBarModel]
     
     /// Set Hide sidebar
-    @Published var hideSideBar: Bool = true
+    @Published public var hideSideBar: Bool = true
     
     private let customeRowValue: AnyView? = nil
     
