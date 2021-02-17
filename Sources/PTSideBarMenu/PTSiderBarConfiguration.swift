@@ -51,7 +51,7 @@ public class PTSiderBarConfiguration: ObservableObject {
     }
     
     public func initiateMenu(selectedRow:@escaping (Int) -> (), contentView: AnyView) -> AnyView {
-        AnyView(PTSideBarMenu(selectedRow: selectedRow, contentView: contentView))
+        AnyView(PTSideBarMenu(selectedRow: selectedRow, contentView: contentView, hideSideBar: $hideSideBar))
     }
     
 }
