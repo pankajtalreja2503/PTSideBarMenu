@@ -17,7 +17,7 @@ public class PTSiderBarConfiguration: ObservableObject {
     let sideBarItems: [PTSideBarModel]
     
     /// Set Hide sidebar
-    @Published public var hideSideBar: Bool = true
+    public var hideSideBar: Binding<Bool>
     
     private let customeRowValue: AnyView? = nil
     
@@ -41,16 +41,17 @@ public class PTSiderBarConfiguration: ObservableObject {
 //    public var hideSideBar: Bool = true
     
     /// Initilize initial values for Side Menu: Divider Design, Items to display
-    public init(dividerdesign: DividerDesigns, items: [PTSideBarModel] ) throws {
+    public init(dividerdesign: DividerDesigns, items: [PTSideBarModel], hideSideBar: Binding<Bool> ) throws {
         self.sideBarItems = items
+        self.hideSideBar = hideSideBar
     }
     
-    public func toggleSideBar() {
-        hideSideBar.toggle()
-    }
+//    public func toggleSideBar() {
+//        hideSideBar.toggle
+//    }
     
     public func initiateMenu(selectedRow:@escaping (Int) -> (), contentView: AnyView, hideSideBar : Binding<Bool> ) -> AnyView {
-        AnyView(PTSideBarMenu(selectedRow: selectedRow, contentView: contentView, hideSideBar: hideSideBar))
+        AnyView(PTSideBarMenu(selectedRow: selectedRow, contentView: contentView, hideSideBar: hideSideBar) )
     }
     
 }

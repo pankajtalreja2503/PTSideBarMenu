@@ -12,18 +12,18 @@ import Combine
 struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
     let contentView: AnyView
-    @Binding var hideSideBar: Bool
+    var hideSideBar: Binding <Bool>
     init(selectedRow: @escaping (Int) -> (), contentView: AnyView, hideSideBar: Binding<Bool>) {
         self.selectedRow = selectedRow
         self.contentView = contentView
-        self._hideSideBar = hideSideBar
+        self.hideSideBar = hideSideBar
     }
     @State private var xOffset: CGFloat = .zero
     
     public var body: some View {
         ZStack {
             
-            PTSideBarMenuParentView(hideSideBar: $hideSideBar, selectedRow: selectedRow)
+            PTSideBarMenuParentView(hideSideBar: hideSideBar, selectedRow: selectedRow)
             .zIndex(1)
             WindowContentView {
                 contentView
