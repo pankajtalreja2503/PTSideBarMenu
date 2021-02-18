@@ -88,4 +88,7 @@ public var zigZagHeight:CGFloat  = 5
 9) Set ZigZag Pattern width
 public var zigZagWidth: CGFloat = 40
 
-More changes coming to your way stay tune :)
+This is the 1st version of this library & there are many changes has been planned to include in it. 
+
+Feel free to reach out to me on my below email id -
+phtalrejaios@gmail.com
