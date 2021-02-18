@@ -38,6 +38,9 @@ public class PTSiderBarConfiguration: ObservableObject {
     /// Set ZigZag Pattern width
     public var zigZagWidth: CGFloat = 40
     
+    ///set frame height and Width of image
+    public var sizeOfImage: (CGFloat, CGFloat) = (40, 40)
+    
 //    public var hideSideBar: Bool = true
     
     /// Initilize initial values for Side Menu: Divider Design, Items to display
