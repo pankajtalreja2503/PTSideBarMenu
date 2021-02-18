@@ -9,11 +9,13 @@ import SwiftUI
 import Combine
 
 @available(iOS 13.0, *)
-struct PTSideBarMenu: View {
+public struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
     let contentView: AnyView
+    @EnvironmentObject var configuration: PTSiderBarConfiguration
+
 //    var hideSideBar: Binding <Bool>
-    init(selectedRow: @escaping (Int) -> (), contentView: AnyView) {
+    public init(selectedRow: @escaping (Int) -> (), contentView: AnyView) {
         self.selectedRow = selectedRow
         self.contentView = contentView
     }
@@ -21,12 +23,20 @@ struct PTSideBarMenu: View {
     
     public var body: some View {
         ZStack {
-            
-            PTSideBarMenuParentView(selectedRow: selectedRow)
-            .zIndex(1)
-            WindowContentView {
-                contentView
+           if configuration.hideSideBar {
+                PTSideBarMenuParentView(selectedRow: selectedRow)
+                .zIndex(1)
+                WindowContentView {
+                    contentView
+                }
+           } else {
+                PTSideBarMenuParentView(selectedRow: selectedRow)
+                .zIndex(1)
+                WindowContentView {
+                    contentView
             }
+           }
+
             
         }
     }
