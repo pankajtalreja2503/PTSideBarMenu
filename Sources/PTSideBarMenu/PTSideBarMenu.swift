@@ -8,19 +8,29 @@
 import SwiftUI
 import Combine
 
+///Starting point of SideBar Menu. Set Container View(Content View), hideSideBar Values
 @available(iOS 13.0, *)
 public struct PTSideBarMenu: View {
+    
+    /// Retrun seleted Row
     let selectedRow: (Int) -> ()
+    
+    ///Set Content View(Contianer view)
     let contentView: AnyView
+    
+    ///Assign Show/Hide Side Bar
     @Binding var hideSideBar: Bool
 
-//    var hideSideBar: Binding <Bool>
+    ///Set the X axis offset
+    @State private var xOffset: CGFloat = .zero
+
+    
     public init(selectedRow: @escaping (Int) -> (), contentView: AnyView, hideSideBar: Binding<Bool>) {
         self.selectedRow = selectedRow
         self.contentView = contentView
         self._hideSideBar = hideSideBar
     }
-    @State private var xOffset: CGFloat = .zero
+    
     
     public var body: some View {
         ZStack {
