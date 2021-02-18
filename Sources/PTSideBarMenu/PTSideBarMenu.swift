@@ -12,25 +12,27 @@ import Combine
 public struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
     let contentView: AnyView
-    @EnvironmentObject var configuration: PTSiderBarConfiguration
+    @Binding var hideSideBar: Bool
+//    @EnvironmentObject var configuration: PTSiderBarConfiguration
 
 //    var hideSideBar: Binding <Bool>
-    public init(selectedRow: @escaping (Int) -> (), contentView: AnyView) {
+    public init(selectedRow: @escaping (Int) -> (), contentView: AnyView, hideSideBar: Binding<Bool>) {
         self.selectedRow = selectedRow
         self.contentView = contentView
+        self._hideSideBar = hideSideBar
     }
     @State private var xOffset: CGFloat = .zero
     
     public var body: some View {
         ZStack {
-           if configuration.hideSideBar {
-                PTSideBarMenuParentView(selectedRow: selectedRow)
+           if hideSideBar {
+            PTSideBarMenuParentView(hideSideBar: $hideSideBar, selectedRow: selectedRow)
                 .zIndex(1)
                 WindowContentView {
                     contentView
                 }
            } else {
-                PTSideBarMenuParentView(selectedRow: selectedRow)
+            PTSideBarMenuParentView(hideSideBar: $hideSideBar, selectedRow: selectedRow)
                 .zIndex(1)
                 WindowContentView {
                     contentView
@@ -58,7 +60,8 @@ struct WindowContentView<Content: View>: View {
 
 
 struct PTSideBarMenuParentView: View {
-    @EnvironmentObject var configuration: PTSiderBarConfiguration
+//    @EnvironmentObject var configuration: PTSiderBarConfiguration
+    @Binding var hideSideBar: Bool
 
     @State private var xOffset: CGFloat = .zero
 //    @Binding var hideSideBar: Bool
@@ -68,7 +71,7 @@ struct PTSideBarMenuParentView: View {
     var body: some View {
         GeometryReader { geometry in
             PTSideBarMenuView(didSelectRowAt: selectedRow,geometry: geometry)
-                .offset(x: configuration.hideSideBar ? -(geometry.size.width) / 2 : xOffset, y: 0)
+                .offset(x: hideSideBar ? -(geometry.size.width) / 2 : xOffset, y: 0)
                 .animation(.easeIn)
             
             
