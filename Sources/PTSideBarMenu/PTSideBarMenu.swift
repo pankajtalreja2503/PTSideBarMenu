@@ -13,7 +13,6 @@ public struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
     let contentView: AnyView
     @Binding var hideSideBar: Bool
-//    @EnvironmentObject var configuration: PTSiderBarConfiguration
 
 //    var hideSideBar: Binding <Bool>
     public init(selectedRow: @escaping (Int) -> (), contentView: AnyView, hideSideBar: Binding<Bool>) {
@@ -25,18 +24,10 @@ public struct PTSideBarMenu: View {
     
     public var body: some View {
         ZStack {
-           if hideSideBar {
             PTSideBarMenuParentView(hideSideBar: $hideSideBar, selectedRow: selectedRow)
                 .zIndex(1)
                 WindowContentView {
                     contentView
-                }
-           } else {
-            PTSideBarMenuParentView(hideSideBar: $hideSideBar, selectedRow: selectedRow)
-                .zIndex(1)
-                WindowContentView {
-                    contentView
-            }
            }
 
             
