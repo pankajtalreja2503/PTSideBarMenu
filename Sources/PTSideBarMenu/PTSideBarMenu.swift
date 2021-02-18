@@ -12,18 +12,17 @@ import Combine
 struct PTSideBarMenu: View {
     let selectedRow: (Int) -> ()
     let contentView: AnyView
-    var hideSideBar: Binding <Bool>
-    init(selectedRow: @escaping (Int) -> (), contentView: AnyView, hideSideBar: Binding<Bool>) {
+//    var hideSideBar: Binding <Bool>
+    init(selectedRow: @escaping (Int) -> (), contentView: AnyView) {
         self.selectedRow = selectedRow
         self.contentView = contentView
-        self.hideSideBar = hideSideBar
     }
     @State private var xOffset: CGFloat = .zero
     
     public var body: some View {
         ZStack {
             
-            PTSideBarMenuParentView(hideSideBar: hideSideBar, selectedRow: selectedRow)
+            PTSideBarMenuParentView(selectedRow: selectedRow)
             .zIndex(1)
             WindowContentView {
                 contentView
@@ -52,14 +51,14 @@ struct PTSideBarMenuParentView: View {
     @EnvironmentObject var configuration: PTSiderBarConfiguration
 
     @State private var xOffset: CGFloat = .zero
-    @Binding var hideSideBar: Bool
+//    @Binding var hideSideBar: Bool
 
     let selectedRow: (Int) -> ()
 
     var body: some View {
         GeometryReader { geometry in
             PTSideBarMenuView(didSelectRowAt: selectedRow,geometry: geometry)
-                .offset(x: hideSideBar ? -(geometry.size.width) / 2 : xOffset, y: 0)
+                .offset(x: configuration.hideSideBar ? -(geometry.size.width) / 2 : xOffset, y: 0)
                 .animation(.easeIn)
             
             
