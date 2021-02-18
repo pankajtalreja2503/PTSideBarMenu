@@ -4,11 +4,14 @@ Version 1.1.0
 
 Below are the details to configure SideMenu into your project
 
-Step 1) 
+Step 1)  Go to Xcode > File > Swift Packages > Add Package Dependancy > Paste the git URL "https://github.com/pankajtalreja2503/PTSideBarMenu.git"
+
+Step 2)
+
     ///Import Library:
         import PTSideBarMenu
 
-Step 2)  
+Step 3)  
     Define Properties which is neccessary for Library
 
     /// Controls display of sidebar
@@ -31,7 +34,7 @@ Step 2)
             var configuration: PTSiderBarConfiguration?
 
 
-Step 3) 
+Step 4) 
     Configuration object need to initialise and create the enviornment object of it so that subviews can use property of this object for configuring the Menus
 
     init() {
@@ -39,7 +42,7 @@ Step 3)
     }
 
 
-Step 4) 
+Step 5) 
     In Body property include Structure PTSideBarMenu object to show and hide the Side Bar. In content view: Define the view you want to show in the screen. Below are the example how to initiate the sideBar
 
     PTSideBarMenu(selectedRow: { (index) in
