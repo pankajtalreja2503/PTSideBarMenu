@@ -40,7 +40,7 @@ struct PTRowContentView: View {
                         Group {
                             if let imageString = item.imageName {
                                 Image(imageString)
-                                    .renderingMode(.original)
+                                    .renderingMode(.template)
                                     .resizable()
                                     .frame(width: configuration.sizeOfImage.0, height: configuration.sizeOfImage.1)
                                     .padding(.top, 10)
@@ -51,7 +51,7 @@ struct PTRowContentView: View {
 
                             } else if let imageData = item.image {
                                 imageData
-                                    .renderingMode(.original)
+                                    .renderingMode(.template)
                                     .resizable()
                                     .frame(width: configuration.sizeOfImage.0, height: configuration.sizeOfImage.1)
                                     .padding(.top, 10)
