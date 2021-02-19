@@ -41,6 +41,17 @@ public class PTSiderBarConfiguration: ObservableObject {
     ///set frame height and Width of image
     public var sizeOfImage: (CGFloat, CGFloat) = (40, 40)
     
+    ///set background color of Image
+    public var backgroundColorOfImage = Color.clear
+    
+    ///set accent color of image
+    public var accentColorOfImage = Color.clear
+
+    ///set foreground color of image
+    public var foregroundColorOfImage = Color.clear
+
+//        .accentColor(Color.clear)
+    
 //    public var hideSideBar: Bool = true
     
     /// Initilize initial values for Side Menu: Divider Design, Items to display

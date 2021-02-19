@@ -44,7 +44,10 @@ struct PTRowContentView: View {
                                     .resizable()
                                     .frame(width: configuration.sizeOfImage.0, height: configuration.sizeOfImage.1)
                                     .padding(.top, 10)
-                                    .background(Color.clear)
+                                    .background(configuration.backgroundColorOfImage)
+                                    .accentColor(configuration.accentColorOfImage)
+                                    .foregroundColor(configuration.foregroundColorOfImage)
+
 
                             } else if let imageData = item.image {
                                 imageData
@@ -52,7 +55,9 @@ struct PTRowContentView: View {
                                     .resizable()
                                     .frame(width: configuration.sizeOfImage.0, height: configuration.sizeOfImage.1)
                                     .padding(.top, 10)
-                                    .background(Color.clear)
+                                    .background(configuration.backgroundColorOfImage)
+                                    .accentColor(configuration.accentColorOfImage)
+                                    .foregroundColor(configuration.foregroundColorOfImage)
 
                             }
                             if let textValue = item.title {
