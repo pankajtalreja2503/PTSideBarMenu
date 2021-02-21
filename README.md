@@ -94,4 +94,7 @@ Feel free to reach out to me on my below email id -
 phtalrejaios@gmail.com
 
 Sample gif file:
-![Screen Recording 2021-02-21 at 1 47 47 PM](https://user-images.githubusercontent.com/66989834/108619557-a6847580-744b-11eb-8eda-f2d7053869e5.gif)
+
+
+![Screen Recording 2021-02-21 at 1 47 47 PM (1)](https://user-images.githubusercontent.com/66989834/108619661-44784000-744c-11eb-9799-761e1732db08.gif)
+
